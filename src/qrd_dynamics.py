@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 L = 4000
 DISTANCE = 1
 N_BOSONS = 4000
-REL_TOL = 1e-7
-ABS_TOL = 1e-7
+REL_TOL = 1e-8
+ABS_TOL = 1e-8
 T_START = 0
 T_END = 1e6
 SCALE = 0.5
@@ -99,28 +99,28 @@ def first_order_annihilation(t: np.array, n: np.array,
     return result
 
 # Choosing initial condition
-initial = n_init_gauss()
+initial = n_init_flat()
 
 
-# Solving the rate equation
-for idex, item in enumerate(superposition_angle):
+# Solving the rate equation and calculating the effective exponent at each time step
+for index, item in enumerate(distances):
     sol = solve_ivp(fun=first_order_annihilation, t_span=(T_START, T_END), y0=initial,
-            args=(L,1,item),atol=ABS_TOL, rtol=REL_TOL, t_eval=time_steps)
+            args=(L,item,0),atol=ABS_TOL, rtol=REL_TOL, t_eval=time_steps)
     average_density = np.sum(sol.y, axis=0)/len(sol.y)
 
-# Calculating the effective exponent at each time step
-for index, item in enumerate(distances):
     sol_scaled = solve_ivp(fun=first_order_annihilation, t_span=np.array((T_START, T_END))*SCALE,
-            y0=initial, args=(L,1,0), t_eval=scaled_time, atol=ABS_TOL, rtol=REL_TOL)
+            y0=initial, args=(L,item,0), t_eval=scaled_time, atol=ABS_TOL, rtol=REL_TOL)
     average_density_scaled = np.sum(sol_scaled.y, axis=0)/len(sol_scaled.y)
     exponent = -np.log(average_density_scaled/average_density)/np.log(SCALE)
-    plt.plot(sol.t, average_density, label=str(item))
+
+    plt.plot(sol.t, exponent, label=str(item))
 
 
-plt.xlabel('time')
-plt.ylabel('density')
-plt.xscale('log')
-plt.yscale('log')
 plt.grid()
+plt.ylabel('\u03B4(t)')
+plt.axhline(0.5, color='grey')
+plt.xlabel('time t')
+plt.xscale('log')
+# plt.yscale('log')
 plt.legend()
 plt.show()
