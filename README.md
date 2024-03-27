@@ -24,3 +24,6 @@ python <path-to-code-file>
 ```
 To work with the code and see examples, refer to the doc folder.
 
+## License
+
+Distributed under the CC-BY 4.0 License. See `LICENSE.txt` for more information.
