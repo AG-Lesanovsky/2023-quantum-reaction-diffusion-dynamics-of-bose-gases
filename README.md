@@ -6,6 +6,18 @@ This repository contains figure data and code implementation of the paper 'quant
 
 The data to create figures can be found in the results folder. The code to create the figures can be found in the source-code (src) folder. There are two python scripts (phasediagram.py, qrd_dynamics.py), one containing the code used to create the phase diagram (Fig. 6 in the paper) and the other containing the code to create the dynamics and finding the effective exponent (Figs. 2-5 in the paper).
 
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#abstract">Abstract</a><li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
+
+## Abstract
+
 ## Requirements
 
 To install requirements:
@@ -27,3 +39,4 @@ To work with the code and see examples, refer to the doc folder.
 ## License
 
 Distributed under the CC-BY 4.0 License. See `LICENSE.txt` for more information.
+
