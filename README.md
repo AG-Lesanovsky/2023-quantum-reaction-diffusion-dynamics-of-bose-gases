@@ -2,7 +2,7 @@
 Quantum Reaction-Limited Reaction-Diffusion Dynamics of Noninteracting Bose Gases
 </h1>
 
-This repository contains figure data and code implementation of the paper 'quantum reaction-limited reaction-diffusion dynamics of noninteracting Bose gases' (https://arxiv.org/abs/2311.04018).
+This repository contains figure data and code implementation of the paper ['quantum reaction-limited reaction-diffusion dynamics of noninteracting Bose gases'](https://arxiv.org/abs/2311.04018).
 
 <details>
   <summary>Table of Contents</summary>
