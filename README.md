@@ -9,7 +9,7 @@ The data to create figures can be found in the results folder. The code to creat
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#abstract">Abstract</a><li>
+    <li><a href="#abstract">Abstract</a></li>
     <li><a href="#requirements">Requirements</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#license">License</a></li>
