@@ -32,6 +32,14 @@ These results show that quantum statistics significantly impact on both the stat
 
 The data to create figures can be found in the results folder. The code to create the figures can be found in the source-code (src) folder. There are two python scripts (phasediagram.py, qrd_dynamics.py), one containing the code used to create the phase diagram (Fig. 6 in the paper) and the other containing the code to create the dynamics and finding the effective exponent (Figs. 2-5 in the paper).
 
+### Downloading the code
+
+A copy of the files and code can be downloaded by cloning the [git](https://git-scm.com/) repository:
+
+```setup
+git clone https://github.com/AG-Lesanovsky/2023-quantum-reaction-diffusion-dynamics-of-bose-gases
+```
+
 ### Requirements
 
 To install requirements:
@@ -41,8 +49,6 @@ pip install -r requirements.txt`
 ```
 
 ## Usage
-
-- `git clone https://github.com/AG-Lesanovsky/2023-quantum-reaction-diffusion-dynamics-of-bose-gases`
 
 To run the code:
 ```setup
