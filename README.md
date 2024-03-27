@@ -55,7 +55,6 @@ To run the code:
 ```setup
 python <path-to-code-file>
 ```
-To work with the code and see examples, refer to the doc folder.
 
 ## License
 
