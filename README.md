@@ -18,6 +18,12 @@ The data to create figures can be found in the results folder. The code to creat
 
 ## Abstract
 
+We investigate quantum reaction-diffusion systems in one-dimension with bosonic particles that coherently hop in a lattice, and when brought in range react dissipatively. Such reactions involve binary annihilation ($A + A \to \emptyset$) and coagulation ($A + A \to A$) of particles at distance $d$. 
+We consider the reaction-limited regime, where dissipative reactions take place at a rate that is small compared to that of coherent hopping. In classical reaction-diffusion systems, this regime is correctly captured by the mean-field approximation. In quantum reaction-diffusion systems, for noninteracting fermionic systems, the reaction-limited regime recently attracted considerable attention because it has been shown to give universal power law decay beyond mean field for the density of particles as a function of time. Here, we address the question whether such universal behavior is present also in the case of the noninteracting Bose gas. 
+We show that beyond mean-field density decay for bosons is possible only for reactions that allow for destructive interference of different decay channels. 
+Furthermore, we study an absorbing-state phase transition induced by the competition between branching $A\to A+A$, decay $A\to \emptyset$ and coagulation $A+A\to A$. We find a stationary phase-diagram, where a first and a second-order transition line meet at a bicritical point which is described by tricritical directed percolation. 
+These results show that quantum statistics significantly impact on both the stationary and the dynamical universal behavior of quantum reaction-diffusion systems.
+
 ## Requirements
 
 To install requirements:
