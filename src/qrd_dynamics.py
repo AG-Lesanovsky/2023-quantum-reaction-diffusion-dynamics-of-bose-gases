@@ -11,14 +11,14 @@ import matplotlib.pyplot as plt
 L = 4000
 DISTANCE = 1
 N_BOSONS = 4000
-REL_TOL = 1e-4
-ABS_TOL = 1e-4
+REL_TOL = 1e-6
+ABS_TOL = 1e-6
 T_START = 0
-T_END = 1e4
+T_END = 1e5
 SCALE = 0.5
 
 # Plot values
-time_steps = np.logspace(-3,4, 200)
+time_steps = np.logspace(-3,5, 200)
 scaled_time = SCALE*time_steps
 
 superposition_angle = [np.pi/4, np.pi/3, np.pi/5]
@@ -137,27 +137,26 @@ def coagulation(t: np.array, n: np.array) -> np.array:
 
 
 # Choosing initial condition & rate equation
-initial = [n_init_gauss(), n_init_flat()]
-rate_equation = second_order_annihilation
+initial = n_init_flat()
+rate_equation = first_order_annihilation
 
 # Solving the rate equation and calculating the effective exponent at each time step
-for index, item in enumerate(initial):
-    sol = solve_ivp(fun=rate_equation, t_span=(T_START, T_END), y0=item,
-            args=(L,),atol=ABS_TOL, rtol=REL_TOL, t_eval=time_steps)
+for index, item in enumerate(distances):
+    sol = solve_ivp(fun=rate_equation, t_span=(T_START, T_END), y0=initial,
+            args=(L,item,0),atol=ABS_TOL, rtol=REL_TOL, t_eval=time_steps)
     average_density = np.sum(sol.y, axis=0)/len(sol.y)
 
     sol_scaled = solve_ivp(fun=rate_equation, t_span=np.array((T_START, T_END))*SCALE,
-            y0=item, args=(L,), t_eval=scaled_time, atol=ABS_TOL, rtol=REL_TOL)
+            y0=initial, args=(L,item,0), t_eval=scaled_time, atol=ABS_TOL, rtol=REL_TOL)
     average_density_scaled = np.sum(sol_scaled.y, axis=0)/len(sol_scaled.y)
     exponent = -np.log(average_density_scaled/average_density)/np.log(SCALE)
 
-    plt.plot(sol.t,exponent, label=str(item))
+    plt.plot(sol.t,average_density, label=str(item))
 
 
 plt.grid()
 plt.xlabel('time t')
 plt.xscale('log')
 plt.yscale('log')
-plt.axhline(y=0.3)
 plt.legend()
 plt.show()
