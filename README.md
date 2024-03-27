@@ -17,3 +17,10 @@ pip install -r requirements.txt`
 ## Usage
 
 - `git clone https://github.com/AG-Lesanovsky/2023-quantum-reaction-diffusion-dynamics-of-bose-gases`
+
+To run the code:
+```setup
+python <path-to-code-file>
+```
+To work with the code and see examples, refer to the doc folder.
+
