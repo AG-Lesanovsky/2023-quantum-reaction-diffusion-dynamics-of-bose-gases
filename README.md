@@ -42,7 +42,7 @@ git clone https://github.com/AG-Lesanovsky/2023-quantum-reaction-diffusion-dynam
 
 ### Requirements
 
-To run the code a working Oython environment is needed. The requirements the can be installed with pip:
+To run the code a working Python environment is needed. The requirements the can be installed with pip:
 
 ```setup
 pip install -r requirements.txt`
